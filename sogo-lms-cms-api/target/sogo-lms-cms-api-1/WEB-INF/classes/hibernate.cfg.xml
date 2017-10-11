@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://45.119.80.49:3333/lms_portal</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgAccountEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgAccountTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgActivityEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgActivityTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCandoEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCenterEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCommentEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCommentResultEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCommentTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCourseEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCourseCategoryEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCourseTraineeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgCourseTrainerEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgLessonEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgOfflineClassEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgOfflineClassStatusEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgOfflineClassTraineeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgOfflineClassTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgOfflineGroupClassEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgPropertyEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgPropertyTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgQuestionEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgQuestionAnswerEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgQuestionTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgSettingEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgSettingHolidayEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeActivityEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeActivityDetailEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeGoalEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeLessonEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineePropertyEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeRateEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeResultEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeTimelineEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeTimelineTypeEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgTraineeUnitCompletedEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgUnitEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgUserEntity"/>
+        <mapping class="vn.sogo.lmscms.model.mysql.SgUserTypeEntity"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
