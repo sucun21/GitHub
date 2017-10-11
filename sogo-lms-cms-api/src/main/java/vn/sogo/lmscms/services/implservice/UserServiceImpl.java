@@ -71,19 +71,6 @@ public class UserServiceImpl extends BaseService implements IUserService {
 	}
 	
 	@Override
-	public CUDReturnMessage AddActivityLog(AddActivityLogRequest request) throws Exception {
-		CUDReturnMessage result = userDao.AddActivityLog(request);
-		
-		if(result.getId() != -1 && request.getIsAddTimeline() != null && request.getIsAddTimeline()){
-			//clear cache
-			deleteCache(String.format(redisKeyPatternStudentTimline, request.getStudentId(), result.getId()));
-		}
-		
-		return result;
-	}
-
-	
-	@Override
 	public CUDReturnMessage AddNewUser(AddNewUserRequest request) throws Exception {
 
 		String md5Password = PasswordHelper.ParseToMD5(request.getPassword());

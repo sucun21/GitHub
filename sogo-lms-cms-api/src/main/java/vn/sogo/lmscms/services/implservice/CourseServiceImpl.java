@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import vn.sogo.lmscms.dao.impldao.CourseDaoImpl;
 import vn.sogo.lmscms.model.ActivityDetails;
+import vn.sogo.lmscms.model.CUDReturnMessage;
 import vn.sogo.lmscms.model.CanDoInfo;
 import vn.sogo.lmscms.model.CanDoInfo;
 import vn.sogo.lmscms.model.CourseActivity;
@@ -16,6 +17,8 @@ import vn.sogo.lmscms.model.QuizQuestion;
 import vn.sogo.lmscms.model.TrainerCourseInfo;
 import vn.sogo.lmscms.model.UnitInCourse;
 import vn.sogo.lmscms.model.UnitInfo;
+import vn.sogo.lmscms.model.request.ExcuteTrainerCourse;
+import vn.sogo.lmscms.model.request.ExcuteUnitCourse;
 import vn.sogo.lmscms.services.interfaceservice.ICourseService;
 /**
  * Created by VinhLe on 4/20/2017.
@@ -108,6 +111,18 @@ public class CourseServiceImpl extends BaseService implements ICourseService {
 	@Override
 	public List<UnitInfo> GetAllUnit(Integer courseId) throws Exception {
 		return courseDao.GetAllUnit(courseId);
+	}
+
+	@Override
+	public CUDReturnMessage ExcuteTrainerCourse(ExcuteTrainerCourse model)
+			throws Exception {
+		return courseDao.ExcuteTrainerCourse(model);
+	}
+
+	@Override
+	public CUDReturnMessage ExcuteUnitCourse(ExcuteUnitCourse model) throws Exception {
+		// TODO Auto-generated method stub
+		return courseDao.ExcuteUnitCourse(model);
 	}
 	
 	

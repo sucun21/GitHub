@@ -3,6 +3,7 @@ package vn.sogo.lmscms.services.interfaceservice;
 import java.util.List;
 
 import vn.sogo.lmscms.model.ActivityDetails;
+import vn.sogo.lmscms.model.CUDReturnMessage;
 import vn.sogo.lmscms.model.CanDoInfo;
 import vn.sogo.lmscms.model.CourseActivity;
 import vn.sogo.lmscms.model.CourseInfo;
@@ -12,6 +13,8 @@ import vn.sogo.lmscms.model.QuizQuestion;
 import vn.sogo.lmscms.model.TrainerCourseInfo;
 import vn.sogo.lmscms.model.UnitInCourse;
 import vn.sogo.lmscms.model.UnitInfo;
+import vn.sogo.lmscms.model.request.ExcuteTrainerCourse;
+import vn.sogo.lmscms.model.request.ExcuteUnitCourse;
 
 /**
  * Created by VinhLe on 4/20/2017.
@@ -43,5 +46,8 @@ public interface ICourseService {
 	List<ActivityDetails> GetActivityInLesson(Integer lessonId) throws Exception;
 	
 	List<UnitInfo> GetAllUnit(Integer courseId) throws Exception;
+	
+	CUDReturnMessage ExcuteTrainerCourse(ExcuteTrainerCourse model)throws Exception;
+	CUDReturnMessage ExcuteUnitCourse(ExcuteUnitCourse model)throws Exception;
 
 }

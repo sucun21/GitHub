@@ -11,7 +11,6 @@ import vn.sogo.lmscms.model.ActivityLogInfo;
 import vn.sogo.lmscms.model.CUDReturnMessage;
 import vn.sogo.lmscms.model.TrainerInfo;
 import vn.sogo.lmscms.model.UserSessionInfo;
-import vn.sogo.lmscms.model.request.AddActivityLogRequest;
 import vn.sogo.lmscms.model.request.AddNewUserRequest;
 import vn.sogo.lmscms.model.request.GetStudentActivityLogRequest;
 import vn.sogo.lmscms.model.request.ResetStudentPasswordRequest;
@@ -66,25 +65,6 @@ public class UserDaoImpl implements IUserDao {
     	};
 		
 		result = mySqlHelper.ExecuteStoreProcSingleResult("web_cms_reset_student_password", params, CUDReturnMessage.class);
-		
-		return result;
-	}
-	
-	@Override
-	public CUDReturnMessage AddActivityLog(AddActivityLogRequest request) throws Exception {
-		CUDReturnMessage result = new CUDReturnMessage();
-		
-		Object[] params = new Object[]{
-				request.getCommentContent(),
-				request.getCommentTypeId(),
-				request.getCommentResultId(),
-				request.getTrainerId(),
-				request.getCourseTraineeId(),
-				request.getStudentId(),
-				request.getIsAddTimeline()
-    	};
-		
-		result = mySqlHelper.ExecuteStoreProcSingleResult("web_cms_add_activity_log", params, CUDReturnMessage.class);
 		
 		return result;
 	}

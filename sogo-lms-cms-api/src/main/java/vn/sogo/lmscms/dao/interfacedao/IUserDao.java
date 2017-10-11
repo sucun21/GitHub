@@ -11,6 +11,5 @@ public interface IUserDao {
 	List<TrainerInfo> GetAllTrainer() throws Exception;
 	List<ActivityLogInfo> GetStudentActivityLog(GetStudentActivityLogRequest studentId) throws Exception;
 	CUDReturnMessage ResetStudentPassword(ResetStudentPasswordRequest request) throws Exception;
-	CUDReturnMessage AddActivityLog(AddActivityLogRequest request) throws Exception;
 	CUDReturnMessage addNewUser(AddNewUserRequest request) throws Exception;
 }

@@ -52,6 +52,8 @@ public class UrlEntity {
     public static final String A_GET_ACTIVITY_CATALOUGE = "/get-activity-catalouge";
     public static final String A_GET_ACTIVITY_BY_ID = "/get-activity-details";
     public static final String A_GET_QUIZ_QUESTION = "/get-quiz-question";
+    public static final String A_ADD_NEW_TRAINER_COURSE = "/add-new-trainer-course";
+    public static final String A_ADD_NEW_UNIT_COURSE = "/add-new-unit-course";
     /*----------------------------------- URL $OfflineClass ---------------------------------------------*/
     public static final String E_OFFLINE_CLASS = "api/offline-class";
     public static final String A_GET_PENDING_CHECK_ATTENDANCE_CLASS = "/get-pending-check-attendance-class";

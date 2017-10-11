@@ -3,6 +3,7 @@ package vn.sogo.lmscms.dao.interfacedao;
 import java.util.List;
 
 import vn.sogo.lmscms.model.ActivityDetails;
+import vn.sogo.lmscms.model.CUDReturnMessage;
 import vn.sogo.lmscms.model.CanDoInfo;
 import vn.sogo.lmscms.model.CourseActivity;
 import vn.sogo.lmscms.model.CourseInfo;
@@ -13,6 +14,8 @@ import vn.sogo.lmscms.model.QuizQuestion;
 import vn.sogo.lmscms.model.TrainerCourseInfo;
 import vn.sogo.lmscms.model.UnitInCourse;
 import vn.sogo.lmscms.model.UnitInfo;
+import vn.sogo.lmscms.model.request.ExcuteTrainerCourse;
+import vn.sogo.lmscms.model.request.ExcuteUnitCourse;
 
 public interface ICourseDao {
 	List<CourseInfo> getAllCourse() throws Exception;
@@ -29,4 +32,6 @@ public interface ICourseDao {
 	LessonInfo GetLessonInfoByLessonId(Integer lessonId)  throws Exception;
 	List<ActivityDetails> GetActivityInLesson(Integer lessonId) throws Exception;
 	List<UnitInfo> GetAllUnit(Integer CourseId) throws Exception;
+	CUDReturnMessage ExcuteTrainerCourse(ExcuteTrainerCourse model)throws Exception;
+	CUDReturnMessage ExcuteUnitCourse(ExcuteUnitCourse model)throws Exception;
 }

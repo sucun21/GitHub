@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import vn.sogo.lmscms.dao.interfacedao.ICourseDao;
 import vn.sogo.lmscms.helpers.MySqlHelper;
 import vn.sogo.lmscms.model.ActivityDetails;
+import vn.sogo.lmscms.model.CUDReturnMessage;
 import vn.sogo.lmscms.model.CanDoInfo;
 import vn.sogo.lmscms.model.CanDoInfo;
 import vn.sogo.lmscms.model.CourseActivity;
@@ -19,6 +20,8 @@ import vn.sogo.lmscms.model.QuizQuestion;
 import vn.sogo.lmscms.model.TrainerCourseInfo;
 import vn.sogo.lmscms.model.UnitInCourse;
 import vn.sogo.lmscms.model.UnitInfo;
+import vn.sogo.lmscms.model.request.ExcuteTrainerCourse;
+import vn.sogo.lmscms.model.request.ExcuteUnitCourse;
 
 public class CourseDaoImpl implements ICourseDao {
 	@Autowired
@@ -140,6 +143,37 @@ public class CourseDaoImpl implements ICourseDao {
 				courseId
     	};
 		return mySqlHelper.ExecuteStoreProc("web_cms_get_unit_filter_course",params, UnitInfo.class);
+	}
+
+	@Override
+	public CUDReturnMessage ExcuteTrainerCourse(ExcuteTrainerCourse model) throws Exception {
+		Integer courseId=model.getCourseId();
+		Integer trainerId=model.getTrainerId();
+		String excuteType=model.getExcuteType();
+		Object[] params = new Object[]{
+				courseId,
+				trainerId,
+				excuteType
+    	};
+		return mySqlHelper.ExecuteStoreProcSingleResult("web_cms_add_new_trainer_course",params, CUDReturnMessage.class);
+	}
+
+	@Override
+	public CUDReturnMessage ExcuteUnitCourse(ExcuteUnitCourse model) throws Exception {
+		// TODO Auto-generated method stub
+		Integer courseId=model.getCourseId();
+		String unitTitle=model.getUnitTitle();
+		String excuteType=model.getExcuteType();
+		String unitDes="";
+		String unitSumary="";
+		Object[] params = new Object[]{
+				courseId,
+				unitTitle,
+				excuteType,
+				unitDes,
+				unitSumary
+    	};
+		return mySqlHelper.ExecuteStoreProcSingleResult("web_cms_excute_unit_course",params, CUDReturnMessage.class);
 	}
 
 }

@@ -17,6 +17,5 @@ public interface IUserService {
 	List<TrainerInfo> GetAllTrainer() throws Exception;
 	List<ActivityLogInfo> GetStudentActivityLog(GetStudentActivityLogRequest request) throws Exception;
 	CUDReturnMessage ResetStudentPassword(ResetStudentPasswordRequest request) throws Exception;
-	CUDReturnMessage AddActivityLog(AddActivityLogRequest request) throws Exception;
 	CUDReturnMessage AddNewUser(AddNewUserRequest req) throws Exception;
 }
